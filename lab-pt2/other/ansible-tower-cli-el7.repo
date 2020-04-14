@@ -1,0 +1,7 @@
+[ansible-tower-cli]
+name=Ansible Tower CLI Repository - EL7 $basearch
+baseurl=https://releases.ansible.com/ansible-tower/rpm/epel-7-$basearch
+gpgcheck=1
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+includepkgs=ansible-tower-cli

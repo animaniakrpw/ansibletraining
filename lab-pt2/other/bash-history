@@ -1,0 +1,419 @@
+ls
+cat myinventory.file 
+export GUID=6183
+ssh app2.6183.internal
+ssh -i  app2.6183.internal
+ssh -i .ssh/6183key.pem  app2.6183.internal
+ssh -i .ssh/6183key.pem  ec2-user@app2.6183.internal
+ssh -i .ssh/6183key.pem  ec2-user@app1.6183.internal
+ssh -i .ssh/6183key.pem  ec2-user@app2.6183.internal
+ssh -i .ssh/6183key.pem  ec2-user@app1.6183.internal
+ls -lhrt
+cd bad-ansible/
+echo $GUID
+ansible-playbook -e "GUID=$GUID" ./main.yml
+curl http://frontend1.${GUID}.example.opentlc.com
+ssh -i .ssh/6183key.pem  ec2-user@appdb1.6183.internal
+ssh -i ~/.ssh/6183key.pem  ec2-user@appdb1.6183.internal
+ls
+cat ../myinventory.file 
+ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+ansible-playbook -e "GUID=$GUID" ./main.yml
+ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+ssh -i ~/.ssh/6183key.pem  ec2-user@appdb1.6183.internal
+ansible-playbook -e "GUID=$GUID" ./main.yml
+curl http://frontend1.${GUID}.example.opentlc.com
+ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+ansible-playbook -e "GUID=$GUID" ./main.yml
+ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+ssh -i ~/.ssh/6183key.pem  ec2-user@appdb1.6183.internal
+time ansible-playbook -e "GUID=$GUID" ./main.yml
+curl http://frontend1.${GUID}.example.opentlc.com
+vi cleanup.yml 
+ssh -i ~/.ssh/6183key.pem  ec2-user@appdb1.6183.internal
+vi cleanup.yml 
+ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+time ansible-playbook -e "GUID=$GUID" ./main.yml
+ln -sf main.yml fixed.yml
+curl http://frontend1.${GUID}.example.opentlc.com
+time ansible-playbook -e "GUID=$GUID" ./cleanup.yml 
+ls -lh
+cd ../good-ansible/
+ls
+ls -lh
+less README.adoc 
+cd 3tier-good/
+ls
+ls -lh
+vi ansible.cfg 
+ls
+ls -lh roles/
+ls -lh roles/lb-tier/
+mc
+ls -lh
+sudo -i
+mkdir -vp .ssh
+export GUID=6183
+sudo cp -v /root/.ssh/${GUID}key.pem ~/.ssh
+sudo chown `whoami` ~/.ssh/${GUID}key.pem
+sudo chmod -v 400 ~/.ssh/${GUID}key.pem
+ssh -i ~/.ssh/${GUID}key.pem  ec2-user@app1.${GUID}.example.opentlc.com
+ssh -i ~/.ssh/${GUID}key.pem  ec2-user@frontend1.${GUID}.example.opentlc.com
+ssh -i ~/.ssh/${GUID}key.pem  ec2-user@app2.${GUID}.example.opentlc.com
+ssh -i ~/.ssh/${GUID}key.pem  ec2-user@appdb1.${GUID}.example.opentlc.com
+w
+cp /etc/ansible/hosts ~/myinventory.file
+vi myinventory.file 
+git clone https://github.com/prakhar1985/bad-ansible.git
+git clone https://github.com/prakhar1985/good-ansible.git
+ls -lhart
+cd good-ansible/
+ls
+cd ..
+ls -lhar
+ls -lhart
+echo $PS`
+echo $PS1
+git clone https://github.com/tonykay/bad-ansible.git
+cd bad-ansible/
+ls
+ls -lh
+cp -v /etc/yum.repos.d/open_three-tier-app.repo .
+ls -lh
+vi main.yml 
+cat hosts 
+echo $GUID
+ansible-playbook -e "GUID=$GUID" \
+cat cleanup.yml 
+cd ../
+cp -v /etc/yum.repos.d/* .
+ls -lh
+cd bad-ansible/
+ls
+ls- lh
+ansible-playbook -e "GUID=$GUID" 
+ansible-playbook -e "GUID=$GUID" main.yml 
+curl http://frontend1.${GUID}.example.opentlc.com
+ls -lh
+cat haproxy.cfg.j2 
+ansible-playbook -e "GUID=$GUID" cleanup.yml 
+vi ../good-ansible/3tier-good/main.yml 
+vi ../good-ansible/3tier-good/roles/app-tier/tasks/main.yml 
+vi ../good-ansible/3tier-good/roles/app-tier/handlers/main.yml 
+vi ../good-ansible/3tier-good/roles/app-tier/vars/main.yml 
+vi ../good-ansible/3tier-good/roles/app-tier/templates/index.html.j2 
+vi main.yml 
+ansible-playbook -e "GUID=$GUID" main.yml 
+curl http://frontend1.${GUID}.example.opentlc.com
+vi main.yml 
+cp -v main.yml main.yml.orig
+vi main.yml 
+ansible-playbook -e "GUID=$GUID" cleanup.yml 
+vi main.yml 
+pwd
+ls -lh
+vi ansible.cfg '
+vi ansible.cfg 
+ls
+pwd
+cat ssh-laptop.cfg 
+history |grep git
+pwd
+ls
+cd ansibletraining/
+ls
+ls -lha
+cd lab-pt2/
+ls
+ls -lh
+cd haproxy_app/
+ls
+ls -lhart
+cat hosts
+cat ansible.cfg 
+cat /etc/ansible/hosts 
+cat ansible.cfg 
+ls -lh
+ls /etc/ansible/roles/
+ls -lha /etc/ansible/roles/
+pwd
+ls
+ls -lhart
+cat .travis.yml 
+clear
+ls -lhart
+cd tasks/
+ls
+vi main.yml 
+pwd
+vi main.yml 
+pwd
+cd ..
+ls -lh templates/
+vi templates/haproxy.cfg.j2 
+ls -lh tasks/
+cd ../tas
+cd tasks/
+ls
+ls -lh
+cat main.yml 
+vi main.yml 
+cp -v main.yml haproxy_deploy.yml
+vi haproxy_deploy.yml 
+cp -v main.yml tomcat_deploy.yml
+cp -v main.yml postgres_deploy.yml
+cp -v main.yml apache_deploy.yml
+vi tomcat_deploy.yml 
+vi postgres_deploy.yml 
+vi ../vars/main.yml 
+vi main.yml 
+cat ../vars/main.yml 
+vi main.yml 
+pwd
+ls -lh
+ls -lhrt
+vi apache_deploy.yml 
+vi postgres_deploy.yml 
+vi haproxy_deploy.yml 
+vi tomcat_deploy.yml 
+vi main.yml 
+ls -lh
+for i in *.yml ; do echo "- import_tasks: $i " ;done
+vi main.yml 
+ls -lhrt
+history |grep playbook
+ls -lh
+pwd
+cd ..
+ls
+ansible-playbook tasks/main.yml --syntax-check
+vi /home/ricardow-datacom.co.nz/ansibletraining/lab-pt2/haproxy_app/tasks/main.yml 
+vi tasks/postgres_deploy.yml 
+cat vars/main.yml 
+vi tasks/postgres_deploy.yml 
+ansible-playbook tasks/main.yml --syntax-check
+pwd
+vi main.yml
+cd ,,
+cd ..
+ls
+mv -v haproxy_app/main.yml .
+vi main.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+vi haproxy_app/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --syntax-check
+pwd
+cd ..
+ls
+git pus
+git push 
+git commit 
+git push 
+history 
+git push 
+git log
+git commit --amend
+git add -A
+git commit --amend
+git push
+git pull
+git push
+history 
+ansible-playbook ./main.yml --syntax-check
+cd lab-pt2/
+ansible-playbook ./main.yml --syntax-check
+man ansible
+ansible --syntax-check ./haproxy_app/tasks/main.yml 
+ansible-playbook --check ./haproxy_app/tasks/main.yml 
+ansible --check ./haproxy_app/tasks/main.yml 
+ansible-playbook --check ./main.yml 
+vi main.yml 
+vi haproxy_app/tasks/main.yml 
+ansible-playbook --check ./main.yml 
+pwd
+ls
+ls -lha
+history |grep role
+history |grep galax
+pwd
+cat haproxy_app/tasks/main.yml 
+ls
+cat main.yml 
+ls
+pwd
+ls -lhrt
+ansible-playbook --check ./main.yml 
+cat haproxy-layer/tasks/main.yml 
+cat haproxy-layer/tasks/haproxy_deploy.yml 
+vi haproxy-layer/tasks/haproxy_deploy.yml 
+ansible-playbook --check ./main.yml 
+history |grep galaxy
+ansible-playbook --check ./main.yml 
+ls
+ansible-playbook ./main.yml 
+pwd
+ls
+ls -lh
+ls haproxy_app/
+cat haproxy-layer/tasks/main.yml 
+mv -v frontend-layer/ apache-layer
+cat apache-layer/tasks/main.yml 
+cat apache-layer/tasks/apache_deploy.yml 
+cat haproxy-layer/tasks/main.yml 
+ls -lh apache-layer/tasks/
+vi apache-layer/tasks/main.yml 
+cat /etc/ansible/hosts 
+pwd
+ls
+cp -v ../bad-ansible/cleanup.yml .
+ansible-playbook ./cleanup.yml 
+ansible-playbook ./main.yml 
+ansible-playbook ./main.yml --check-syntax
+ansible-playbook ./main.yml --check
+ansible-playbook ./cleanup.yml 
+cat /etc/ansible/hosts 
+ansible-playbook ./main.yml --check
+time ansible-playbook ./main.yml 
+history |grep curl
+history |grep GUID
+export GUID=6183
+curl http://frontend1.${GUID}.example.opentlc.com
+ls
+vi db-layer/tasks/main.yml 
+vi apache-layer/-layer/tasks/main.yml 
+vi apache-layer/tasks/main.yml 
+vi db-layer/tasks/main.yml 
+vi db-layer/tasks/postgres_deploy.yml 
+ansible-playbook ./main.yml --check
+vi main.yml 
+ansible-playbook ./main.yml --check
+gipwd
+cd ..
+history |grep git
+git add -A
+git commit
+git push
+cd lab-pt2/
+ansible-playbook ./main.yml --check
+history 
+ansible-playbook ./main.yml --check
+ansible-playbook ./cleanup.yml 
+ansible-playbook ./main.yml 
+history |grep curl
+curl http://frontend1.${GUID}.example.opentlc.com
+ansible-playbook ./cleanup.yml 
+ansible-playbook ./main.yml --check
+ls
+ls -lhrt
+git clone https://github.com/animaniakrpw/ansibletraining
+cd ansibletraining/bad-ansible/
+ls
+ls -lh
+vi fixed.yml 
+cd ..
+ld
+ls
+ls -lha
+mkdir -vp lab-pt2
+cd lab-pt2/
+ansible-galaxy init haproxy_app
+ls -lh
+cd haproxy_app/
+ls
+ls -lh
+cd defaults/
+ls
+cat main.yml 
+cd ..
+ls -lh
+yum install mc
+sudo yum install mc
+mc
+ls -lh
+less fi
+less fixed.yml 
+cat templates/index.html.j2 
+less fixed.yml 
+history |grep ssh
+ssh -i ~/.ssh/${GUID}key.pem  ec2-user@appdb1.${GUID}.example.opentlc.com
+less fixed.yml 
+vi /home/ricardow-datacom.co.nz/ansibletraining/lab-pt2/haproxy_app/tasks/postgres_deploy.yml 
+vi /home/ricardow-datacom.co.nz/ansibletraining/lab-pt2/haproxy_app/tasks/apache_deploy.yml 
+cat tasks/apache_deploy.yml 
+cat tasks/haproxy_deploy.yml 
+cat tasks/postgres_deploy.yml 
+vi /home/ricardow-datacom.co.nz/ansibletraining/lab-pt2/haproxy_app/tasks/main.yml 
+history |grep galxy
+history |grep gal
+ansible-galaxy init haproxy-layer
+ansible-galaxy init frontend-layer
+ansible-galaxy init db--layer
+rm -rvf db--layer
+ansible-galaxy init db-layer
+mc
+ls
+pwd
+cd ../haproxy-layer/
+ls
+cd tasks/
+ls
+ls -lh
+cat haproxy_deploy.yml 
+pwd
+vi main.yml 
+cd ..
+pwd
+ls
+cd ..
+pwd
+vi main.yml 
+pwd
+history |grep gala
+pwd
+ls
+ansible-galaxy init enable_repos
+cp -v haproxy_app/files/open_three-tier-app.repo enable_repos/files/
+vi enable_repos/tasks/main.yml 
+vi main.yml 
+vi apache-layer/tasks/tomcat_deploy.yml 
+vi main.yml 
+vi db-layer/tasks/postgres_deploy.yml 
+pwd
+cd ..
+git push
+history |grep git
+vi main.yml 
+cd -
+vi main.yml 
+vi db-layer/tasks/postgres_deploy.yml 
+cd ..
+git add -A && git commit -m "updates" && git push
+vi lab-pt2/main.yml 
+cd ..
+pwd
+cd ansibletraining/
+git add -A && git commit -m "updates" && git push
+ls
+cd ..
+ls
+cat ansible-tower-cli-el7.repo 
+ls -lhart
+cd ansibletraining/
+ls
+cd lab-pt2/
+ls
+mkdir -vp other
+cp -v /home/ricardow-datacom.co.nz/myinventory.file other/
+cp -v /home/ricardow-datacom.co.nz/open_three-tier-app.repo other/
+cp -v /home/ricardow-datacom.co.nz/ansible-tower-cli-el7.repo other/
+ls -lh /home/ricardow-datacom.co.nz/
