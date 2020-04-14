@@ -1,0 +1,53 @@
+---
+# tasks file for haproxy_app
+#
+#__postgresql_version: "9.2"
+#__postgresql_user: "postgres"
+#__postgresql_data_dir: "/var/lib/pgsql/data"
+#__postgresql_bin_path: "/usr/bin"
+#__postgresql_config_path: "/var/lib/pgsql/data"
+#__postgresql_daemon: postgresql
+#__postgresql_packages:
+#- postgresql
+#- postgresql-server
+#- postgresql-contrib
+#- postgresql-libs
+#
+#- name: deploy postgres
+#- gather_facts: false
+#- become: true
+#- hosts: appdbs
+#tasks:
+
+- name: install progress
+  yum:
+  name: postgresql-server
+   state: latest
+
+- name: enable postgres at boot
+  service:
+  name: postgresql
+  enabled: yes
+
+- name: Check if PostgreSQL database is initialized.
+  stat:
+    #path: "{{ postgresql_data_dir }}/PG_VERSION"
+    path: "/var/lib/pgsql/data/PG_VERSION"
+    register: pgdata_dir_version
+
+- name: Ensure PostgreSQL database is initialized.
+  #command: "{{ postgresql_bin_path }}/initdb -D {{ postgresql_data_dir }}"
+  #command: "/usr/bin/initdb -D {{ postgresql_data_dir }}"
+  command: "/usr/bin/initdb -D /var/lib/pgsql/data"
+  when: not pgdata_dir_version.stat.exists
+  become: yes
+  #become_user: "{{ postgresql_user }}"
+  become_user: "postgres"
+  # See: https://github.com/ansible/ansible/issues/16048#issuecomment-229012509
+  #vars:
+  # ansible_ssh_pipelining: true
+
+- name: start postgres
+  service:
+  name: postgresql.service
+  state: started

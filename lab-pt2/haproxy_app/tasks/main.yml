@@ -1,0 +1,10 @@
+---
+# tasks file for haproxy_app
+#
+# variable setup
+#- include_vars: main.yml
+
+- import_tasks: postgres_deploy.yml
+- import_tasks: apache_deploy.yml
+- import_tasks: tomcat_deploy.yml
+- import_tasks: haproxy_deploy.yml
