@@ -3,17 +3,27 @@
   roles:
     - enable_repos
 
-#- hosts: frontends
-#  become: true
-#  roles:
-#   - haproxy-layer
+- hosts: frontends
+  become: true
+  roles:
+   - haproxy-layer
 
-#- hosts: apps
-#  become: true
-#  roles:
-#   - apache-layer
+- hosts: apps
+  become: true
+  roles:
+   - apache-layer
 
 - hosts: appdbs
   become: true
   roles:
    - db-layer
+
+- name: smoke test
+  hosts: localhost
+  gather_facts: false # remove later! speeds up testing
+  become: true
+
+#-  tasks:
+#   name: smoke test
+#    uri:
+#    url: http://frontend1.{{ GUID }}.example.opentlc.com
