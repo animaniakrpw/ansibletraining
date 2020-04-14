@@ -4,7 +4,12 @@
 # variable setup
 #- include_vars: main.yml
 
-- import_tasks: postgres_deploy.yml
-- import_tasks: apache_deploy.yml
-- import_tasks: tomcat_deploy.yml
-- import_tasks: haproxy_deploy.yml
+- hosts: app
+  include_tasks: apache_deploy.yml
+  include_tasks: tomcat_deploy.yml
+
+- hosts: frontends
+  include_tasks: haproxy_deploy.yml
+
+- hosts: appdbs
+  include_tasks: postgres_deploy.yml

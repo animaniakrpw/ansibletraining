@@ -1,0 +1,4 @@
+---
+# tasks file for db-layer
+#
+- include_tasks: postgres_deploy.yml

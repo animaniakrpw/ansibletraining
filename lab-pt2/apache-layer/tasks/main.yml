@@ -1,0 +1,6 @@
+---
+# tasks file for frontend-layer
+
+- include_tasks: apache_deploy.yml
+- include_tasks: tomcat_deploy.yml
+

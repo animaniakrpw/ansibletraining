@@ -1,4 +1,19 @@
 ---
-# - hosts: node2
--  roles:
-   - haproxy_app
+- hosts: frontends, apps, appdbs
+  roles:
+    - enable_repos
+
+#- hosts: frontends
+#  become: true
+#  roles:
+#   - haproxy-layer
+
+#- hosts: apps
+#  become: true
+#  roles:
+#   - apache-layer
+
+- hosts: appdbs
+  become: true
+  roles:
+   - db-layer
