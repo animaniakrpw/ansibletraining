@@ -32,8 +32,8 @@
 - name: Check if PostgreSQL database is initialized.
   stat:
   #path: "{{ postgresql_data_dir }}/PG_VERSION"
-  path: "/var/lib/pgsql/data/PG_VERSION"
-   register: pgdata_dir_version
+    path: "/var/lib/pgsql/data/PG_VERSION"
+  register: pgdata_dir_version
 
 - name: Ensure PostgreSQL database is initialized.
   #command: "{{ postgresql_bin_path }}/initdb -D {{ postgresql_data_dir }}"
@@ -43,6 +43,7 @@
   become: yes
   #become_user: "{{ postgresql_user }}"
   become_user: "postgres"
+  #
   # See: https://github.com/ansible/ansible/issues/16048#issuecomment-229012509
   #vars:
   # ansible_ssh_pipelining: true
