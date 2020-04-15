@@ -2,6 +2,7 @@
 # tasks file for enable_repos
 #
 - name: enable repos
+  become: true
   template:
     src: files/open_three-tier-app.repo
     dest: /etc/yum.repos.d/open_three-tier-app.repo
