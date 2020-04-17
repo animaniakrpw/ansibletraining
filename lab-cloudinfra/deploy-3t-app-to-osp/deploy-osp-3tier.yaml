@@ -1,0 +1,17 @@
+- hosts: jumpbox
+#  become: yes
+#  roles:
+#     - osp-network
+#     - osp-keypair
+#     - osp-securitygroup
+#     - osp-flavor
+
+  tasks:
+## Alternate Method to create dynmaic inventory
+  - name: Gather facts
+    include_role: 
+       name: osp-facts
+    tags:
+     - test_inventory
+
+- include: /home/rpw01/training/ansibletraining/lab-pt2/main.yml

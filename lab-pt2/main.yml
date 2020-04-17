@@ -1,5 +1,6 @@
 ---
 - hosts: frontends, apps, appdbs
+  become: true
   roles:
     - enable_repos
 
@@ -18,10 +19,10 @@
   roles:
    - db-layer
 
-- name: smoke test
-  hosts: localhost
-  gather_facts: false # remove later! speeds up testing
-  become: true
+#- name: smoke test
+#  hosts: localhost
+#  gather_facts: false # remove later! speeds up testing
+#  become: true
 
 #-  tasks:
 #   name: smoke test
